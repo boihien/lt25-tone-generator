@@ -1,0 +1,26 @@
+[project]
+name = "lt25-mcp"
+version = "0.1.0"
+description = "MCP server for controlling a Fender Mustang LT25 over USB"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ltamp>=0.2.7",
+    "mcp>=1.9.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+lt25-mcp = "lt25_mcp.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
